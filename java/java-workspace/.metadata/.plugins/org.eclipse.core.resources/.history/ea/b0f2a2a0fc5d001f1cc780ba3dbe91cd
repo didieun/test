@@ -1,0 +1,33 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int total = input.nextInt();
+		int count = input.nextInt();
+		int money , num , money2, sum = 0;
+	
+		for(int i = 1; i <= count; i++) {
+			money = input.nextInt();
+			num = input.nextInt();
+			money2 = money * num;
+			sum += money2;
+			
+		}
+		
+		if(total == sum) {
+			System.out.println("Yes");
+		}else {
+			System.out.println("No");
+		}
+		
+//		260000
+//		4
+//		20000 5
+//		30000 2
+//		10000 6
+//		5000 8
+	}
+}

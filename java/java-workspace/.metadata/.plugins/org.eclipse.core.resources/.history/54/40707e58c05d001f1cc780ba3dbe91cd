@@ -1,0 +1,27 @@
+package constructor;
+
+class TestClass01{
+	
+	private String officeName;
+	
+	// 생성자는 반환타입이 없이 public 클래스명(){} 만 작성
+	public TestClass01(){
+		System.out.println("기본 생성자");
+	}
+	
+	public TestClass01(String officeName) {
+		System.out.println("매개변수 있는 생성자");
+	}
+	
+}
+
+public class MainClass01 {
+
+	public static void main(String[] args) {
+		
+		TestClass01 t = new TestClass01();
+		TestClass01 t02 = new TestClass01("홍길동");
+
+	}
+
+}

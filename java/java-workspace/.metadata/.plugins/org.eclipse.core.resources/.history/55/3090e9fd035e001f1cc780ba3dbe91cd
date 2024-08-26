@@ -1,0 +1,22 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int a, b, sum = 0;
+		boolean bool = true;
+		
+		while(bool) {
+			a = input.nextInt();
+			b = input.nextInt();
+			if(a == 0 && b == 0) {
+				bool = false;
+			} else {
+				sum = a + b;
+				System.out.println(sum);
+			}
+		}
+	}
+}

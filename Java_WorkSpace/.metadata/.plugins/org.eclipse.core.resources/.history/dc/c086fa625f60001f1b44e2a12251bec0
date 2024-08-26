@@ -1,0 +1,21 @@
+package Quiz;
+//16장.상속.pdf 강의교안의 31쪽 8번문제
+
+class A {
+	public A() {
+		System.out.println("hello from a");
+	}
+}
+
+class B extends A{
+	public B() {
+		super();
+		System.out.println("hell from b");
+		
+	}
+}
+public class Ex16_08 {
+	public static void main(String[] args) {
+		A a = new B();
+	}
+}

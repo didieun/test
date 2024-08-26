@@ -1,0 +1,37 @@
+package set_get;
+
+import java.util.Scanner;
+
+public class TestQuiz03 {
+	
+	private String id;
+	private String pw;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getPw() {
+		return pw;
+	}
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+	
+	public void input() {
+		
+		Scanner input = new Scanner(System.in);
+		System.out.print("아이디 입력: ");
+		this.id = input.next();
+		System.out.print("비밀번호 입력: ");
+		this.pw = input.next();
+		System.out.println();
+		
+	}
+	
+	public void output() {
+		System.out.println("아이디: " + this.getId());
+		System.out.println("비밀번호: " + this.getPw());
+	}
+}

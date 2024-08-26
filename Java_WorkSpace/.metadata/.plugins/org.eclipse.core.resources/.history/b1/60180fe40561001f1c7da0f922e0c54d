@@ -1,0 +1,9 @@
+package downcasting;
+
+public class UpcastDownCast07 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

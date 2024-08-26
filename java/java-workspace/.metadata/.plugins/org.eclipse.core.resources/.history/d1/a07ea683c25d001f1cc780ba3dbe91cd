@@ -1,0 +1,31 @@
+package constructor;
+
+import java.util.ArrayList;
+
+class TestClass03{
+	
+	ArrayList<String> arr; // = new ArrayList<>();
+	
+	public TestClass03() {
+		arr = new ArrayList<>();
+		// 어떤값을 초기화 할려면 생성자 안에 초기화 하면 된다.
+		if(true) {
+			arr = new ArrayList<>();
+		}
+		
+	}
+	
+//	public TestClass03() {
+//		
+//	}
+}
+
+public class MainClass03 {
+
+	public static void main(String[] args) {
+		
+		TestClass03 t = new TestClass03();
+		
+	}
+
+}

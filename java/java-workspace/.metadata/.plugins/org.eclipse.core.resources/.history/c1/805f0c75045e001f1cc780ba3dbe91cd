@@ -1,0 +1,18 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int a, b, sum = 0;
+		boolean bool = true;
+		
+		while(input.hasNext()) {
+			a = input.nextInt();
+			b = input.nextInt();
+			sum = a + b;
+			System.out.println(sum);
+		}
+	}
+}

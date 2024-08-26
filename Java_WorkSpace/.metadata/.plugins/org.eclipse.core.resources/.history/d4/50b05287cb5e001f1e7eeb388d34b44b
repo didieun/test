@@ -1,0 +1,15 @@
+/*	전달인자 개수가 다른 메서드가 오버로딩이 된 경우는 그 개수만큼 중복해서 메서드를 정의해야 한다. 
+ * 	이러한 불편함을 해결하기 위해서 자바5버전에서 가변인자라는 문법이 추가되었다.
+ */
+
+class d {
+	
+}
+
+public class BreakTest04 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

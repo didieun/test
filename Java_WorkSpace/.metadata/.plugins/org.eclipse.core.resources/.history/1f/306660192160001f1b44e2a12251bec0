@@ -1,0 +1,5 @@
+package net.daum.vo;
+
+public class MemberVO {	// 중간에 자료를 저장하는 데이터 자장 bin 클래스
+
+}

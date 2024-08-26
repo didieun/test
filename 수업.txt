@@ -1,0 +1,222 @@
+Day01 -> package 이름 없음
+
+-----------------------------------------------------------------------------------------------------------
+
+public class BreakTest01 {
+
+	public static void main(String[] args) {
+		
+		int i, j; // 반복문 제어변수
+	
+		for(i = 1; i <= 5; i++) {
+			for(j = 1; j <=5; j++) {
+				if(j % 3 == 0) {
+					break;  // 가장 가까운 맨 안쪽 반복문만 중단한다.
+				}
+				System.out.println("j -> " + j);
+			}	// inner for\
+			System.out.println("\n i -> " + i);
+		}	// outer for
+		System.out.println("\n============================>");
+		
+		// 바깥쪽 반복문과 안쪽반복문 모두 중단
+		break_for:
+		for(int a = 1; a <= 5; a++) {
+			for(int b = 1; b <= 5; b++) {
+				if(b % 3 == 0) {
+					break break_for;
+				}
+				System.out.println("b ->" + b);
+			}
+			System.out.println("\n a ->" + a);
+		}
+		System.out.println("\n============================>");
+	}
+}
+-----------------------------------------------------------------------------------------------------------
+// 다중반복문을 모두 강제 종료하기 위해서 이름 붙는 반복문을 응용한 메뉴선택 계산 예제
+
+import java.util.Scanner;
+
+public class BreakTest02 {
+
+	public static void main(String[] args) {
+	
+		int menu = 0;
+		int num = 0;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		exit_for:
+		while(true) {	// 무한루프문
+			
+			System.out.println("1-물냉면");
+			System.out.println("2-비빔냉면");
+			System.out.println("3-삼겹살");
+			System.out.print("원하는 메뉴(1-3)를 선택하세요. (종료:0) >>>");
+			
+			String resultMenu = scan.nextLine();	// 메뉴를 문자열로 입력받는다.
+			menu = Integer.parseInt(resultMenu);	// 입력받은 메뉴번호 문자열을 정수 숫자로 변경해서 저장
+			
+			if(menu == 0) {
+				System.out.println("메뉴선택을 종료합니다.");
+				break;	// 무한루프 while 반복문 종료
+			} else if(!(menu >= 1 && menu <= 3)) {
+				System.out.println("\n====================>");
+				System.out.println("메뉴를 잘못 선택했습니다.(종료는 0)");
+				continue;	// 아래문장 실행하지 않고 반복문 처음으로 돌아가서 다음 반복 계속
+			}
+	
+			System.out.println("\n====================>");
+			
+			for(;;) {	// for 반복문 무한 루프문
+			
+				System.out.print("메뉴 계산할 값을 입력.(계산 종료:0, 전체종료: 99) >>>");
+				num = Integer.parseInt(scan.nextLine());
+				
+				if(num == 0) {
+					break;	// 무한루프 for 반복문 종료
+				}
+				
+				if(num == 99) {
+					break exit_for;	// 전체 종료 => for, while 반복문 모두 종료하고 빠져 나간다.
+				}
+				
+				switch(menu) {
+					case 1:
+						System.out.println("물냉면값 = " + num + "원");
+						System.out.println();
+						break;
+					case 2:
+						System.out.println("비빔냉면값 = " + num + "원");
+						System.out.println();
+						break;
+					case 3:
+						System.out.println("삼겹살값 = " + num + "원");
+						System.out.println();
+						break;
+				}
+				
+			}// for
+			
+		}// while
+		
+	}
+}
+-----------------------------------------------------------------------------------------------------------
+/*	메서드 오버로딩의 구분요건으로 메서드명 앞의 리턴타입을 다르게 한 오버로딩은 적용되지 않는다.
+ * 	일반적으로 오버로딩 구분요건으로는 전달인자(매개변수) 개수를 다르게 하든지, 
+ * 	매개변수 타입을 다르게 한 오버로딩을 적용한다.
+ */
+
+class Mt03{
+	void pr(int k) {
+		System.out.println(k);
+	}
+	
+	int pr(int k) {
+		return k;
+	}
+}// Mt03 class
+
+public class BreakTest03 {
+
+	public static void main(String[] args) {
+	
+		Mt03 mt03 = new Mt03();
+		mt03.pr(100);
+		int result = mt03.pr(100);
+		
+	}
+}
+
+-----------------------------------------------------------------------------------------------------------
+/*	전달인자 개수가 다른 메서드가 오버로딩이 된 경우는 그 개수만큼 중복해서 메서드를 정의해야 한다. 
+ * 	이러한 불편함을 해결하기 위해서 자바5버전에서 가변인자라는 문법이 추가되었다.
+ */
+
+class Mt04 {
+	void prn(int a) {
+		System.out.println(a);
+	}
+	void prn(int a, int b) {
+		System.out.println(a + "\t" + b);
+	}
+	void prn(int a, int b, int c) {
+		System.out.println(a + "\t" + b + "\t" + c);
+	}
+}// Mt04 class
+
+class Mt05{
+	// 가변인자 문법 적용 == int ... arr
+		void prn(int ... arr) {
+			System.out.println("\n=========> 가변인자 문법 적용(일반 for 문)");
+			for(int i = 0; i < arr.length; i++) {
+				System.out.print(arr[i] + "\t");
+			}
+			
+			System.out.println("\n=========> 가변인자 문법 적용(향상된 for 문)");
+			// 향상된 확장 for 반복문으로 가변 인자값 출력
+			for(int k : arr) {
+				System.out.print(k + "\t");
+			}
+		}
+}// Mt05 class
+
+public class BreakTest04 {
+
+	public static void main(String[] args) {
+
+		Mt04 m04 = new Mt04();
+		m04.prn(10);
+		m04.prn(10,20);
+		m04.prn(10,20,30);
+		
+		Mt05 m05 = new Mt05();
+		m05.prn(40, 30, 20,10);
+		m05.prn(20, 10);
+		
+	}
+
+}
+
+-----------------------------------------------------------------------------------------------------------
+/*	기본 타입과 참조 즉 레퍼런스 자료형(타입)의 차이점.
+ * 	new 키워드로 새로운 객체를 생성하면 새로운 객체주소가 할당된다.
+ */
+
+class MyDate {
+	int year = 2023;
+	int month = 10;
+	int day = 10;
+}
+
+public class BreakTest05 {
+
+	public static void main(String[] args) {
+
+		int a = 7;
+		int b = a;
+		System.out.println("a: " + a + ", b: " + b);	// 7, 7
+		b = 10;
+		System.out.println("a: " + a + ", b: " + b);	// 7, 10
+		
+		MyDate d = new MyDate();
+		MyDate t = d;	// 같은 주소를 가르킨다.
+		
+		System.out.println(d.year + "년 " + d.month + "월 " + d.day + "일");	// 2023년 10월 10일
+		System.out.println(t.year + "년 " + t.month + "월 " + t.day + "일");	// 2023년 10월 10일
+		
+		t.year = 2024;	t.month = 8;	t.day = 20;	// t와 d는 같은 주소를 가리키고 있기 때문에 년월일도 같이 변경이 된다.
+		System.out.println(d.year + "년 " + d.month + "월 " + d.day + "일");	// 2024년 8월 20일
+		System.out.println(t.year + "년 " + t.month + "월 " + t.day + "일");	// 2024년 8월 20일
+		
+		t = new MyDate();	// 새로운 객체 주소가 할당되면 t와 d는 다른 주소를 가진다.
+		t.year = 2025;	t.month = 3;	t.day = 10;
+		System.out.println(d.year + "년 " + d.month + "월 " + d.day + "일");	// 2024년 8월 20일
+		System.out.println(t.year + "년 " + t.month + "월 " + t.day + "일");	// 2025년 3월 10일
+	}
+
+}
+
+-----------------------------------------------------------------------------------------------------------

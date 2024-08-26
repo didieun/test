@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+D:\20240805_FinTech_Start\Java_WorkSpace\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+527531955.index
+836723414.index
+1752583973.index

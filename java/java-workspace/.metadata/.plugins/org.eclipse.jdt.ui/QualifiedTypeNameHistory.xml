@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="member.MemberClass"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.CopyOnWriteArraySet"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="park.Photo"/>
+    <fullyQualifiedTypeName name="cellphone.message"/>
+    <fullyQualifiedTypeName name="bank.BankApp"/>
+    <fullyQualifiedTypeName name="music.Music"/>
+    <fullyQualifiedTypeName name="onoff.OnOff_Operate"/>
+    <fullyQualifiedTypeName name="cellphone.Message_Operate"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+</qualifiedTypeNameHistroy>

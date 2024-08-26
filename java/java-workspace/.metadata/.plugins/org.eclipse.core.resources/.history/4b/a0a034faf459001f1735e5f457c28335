@@ -1,0 +1,121 @@
+package park;
+
+import java.util.Scanner;
+
+public class Photo {
+
+	public void display() {
+		
+		Scanner input = new Scanner(System.in);
+		PhotoDTO p = new PhotoDTO();
+		int num;
+		boolean bool = true;
+		
+		while(bool) {
+			System.out.println("1. 사진 촬영   2. 동영상 촬영   3. 앨범   4. 나가기 ");
+			System.out.print(">>> ");
+			num = input.nextInt();
+			System.out.println();
+			
+			switch(num) {
+				case 1: 
+					
+					System.out.println("------ 사진 촬영 ------");
+					System.out.println("1. 촬영 \t 2. 취소");
+					System.out.print(">>> ");
+					num = input.nextInt();
+					System.out.println();
+					
+					switch(num) {
+						case 1: 
+							System.out.println("사진 촬영 완료!!!!");
+							System.out.println("1. 저장 \t 2. 취소");
+							System.out.print(">>> ");
+							num = input.nextInt();
+							input.nextLine();
+							System.out.println();
+							
+							if(num == 1) {
+								System.out.print("사진이름 입력: ");
+								p.setFileName(input.nextLine() + ".jpg");
+							
+								System.out.println("사진이 저장되었습니다. ");
+							} else {
+								System.out.println("취소 했습니다.");
+							}
+							
+							break;
+						case 2: 
+							System.out.println("취소 했습니다.");
+							break;
+						default:
+							System.out.println("다시 입력해주세요.");
+							System.out.println();
+							break;
+					}
+					
+					System.out.println();
+					break;
+				case 2:
+					System.out.println("------ 동영상 촬영 ------");
+					System.out.println("1. 촬영 \t 2. 취소");
+					System.out.print(">>> ");
+					num = input.nextInt();
+					System.out.println();
+					
+					switch(num) {
+						case 1: 
+							System.out.println("동영상 촬영 완료!!!!");
+							System.out.println("1. 저장 \t 2. 취소");
+							System.out.print(">>> ");
+							num = input.nextInt();
+							input.nextLine();
+							System.out.println();
+							
+							if(num == 1) {
+								System.out.print("동영상이름 입력: ");
+								p.setFileName(input.nextLine() + ".wmv");
+							
+								System.out.println("동영상이 저장되었습니다. ");
+							} else {
+								System.out.println("취소 했습니다.");
+							}
+							
+							break;
+						case 2: 
+							System.out.println("취소 했습니다.");
+							break;
+						default:
+							System.out.println("다시 입력해주세요.");
+							System.out.println();
+							break;
+					}
+					
+					System.out.println();
+					break;
+				case 3:
+					
+//					System.out.println(p.getList().get(0));
+					
+					for(int i = 0; i < p.getList().size(); i++) {
+						System.out.println((i + 1) + ". " + p.getList().get(i));
+					}
+					
+					
+					System.out.println();
+					break;
+				case 4:
+					System.out.println("사진 메뉴 종료!!!");
+					bool = false;
+					System.out.println();
+					break;
+				default:
+					System.out.println("다시 입력해주세요.");
+					System.out.println();
+					break;
+			}
+		}
+		
+		
+	}
+}

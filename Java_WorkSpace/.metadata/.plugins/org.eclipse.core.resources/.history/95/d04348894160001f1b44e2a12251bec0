@@ -1,0 +1,9 @@
+package static_import;
+
+public class Static_Import {
+
+	public static void main(String[] args) {
+
+	}
+
+}

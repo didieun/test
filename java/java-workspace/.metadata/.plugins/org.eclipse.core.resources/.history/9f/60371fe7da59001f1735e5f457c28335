@@ -1,0 +1,82 @@
+package set_get;
+
+import java.util.Scanner;
+
+public class TestQuiz03 {
+	
+	private String id;
+	private String pw;
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getPw() {
+		return pw;
+	}
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+	
+	public void input() {
+		
+		Scanner input = new Scanner(System.in);
+		
+		String inputId, inputPw;
+		int num;
+		boolean bool = true;
+		
+		while(bool) {
+			System.out.println("1. 로그인");
+			System.out.println("2. 회원가입");
+			System.out.println("3. 종료");
+			System.out.print(">>> ");
+			num = input.nextInt();
+			System.out.println();
+			
+			switch(num) {
+				case 1: 
+					System.out.print("아이디 입력: ");
+					inputId = input.next();
+					System.out.print("비밀번호 입력: ");
+					inputPw = input.next();
+					
+					loginCheck(inputId, inputPw);
+					
+					System.out.println();
+					break;
+				case 2: 
+					System.out.print("아이디 입력: ");
+					setId(input.next());
+					System.out.print("비밀번호 입력: ");
+					setPw(input.next());
+					System.out.println();
+					
+					System.out.println("회원 가입이 완료되었습니다.");
+					System.out.println();
+					
+					break;
+				case 3:
+					System.out.println("종료합니다.");
+					bool = false;
+					System.out.println();
+					break;
+				default:
+					System.out.println("번호를 잘못 눌렀습니다. 다시 눌러주세요.");
+					break;
+			}
+		}
+	}
+	
+	public void loginCheck(String inputId, String inputPw) {
+		if(!inputId.equals(getId())) {
+			System.out.println("아이디가 일치하지 않습니다. ");
+		} else if(!inputPw.equals(getPw())){
+			System.out.println("비밀번호가 일치하지 않습니다. ");
+		} else {
+			System.out.println("로그인 성공!!");
+		}
+	}
+}

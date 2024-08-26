@@ -1,0 +1,17 @@
+package Quiz;
+//16장.상속.pdf 강의교안의 29쪽 6번문제
+
+class Base {
+	Base() {
+		System.out.println("Base");
+	}
+}
+
+class Alpha extends Base{}
+
+public class Ex16_07 {
+	public static void main(String[] args) {
+		new Alpha();
+		new Base();
+	}
+}

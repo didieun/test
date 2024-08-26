@@ -1,0 +1,10 @@
+package Quiz;
+// 16장.상속.pdf 강의교안의 20쪽 1번문제
+
+public class Ex16_2 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

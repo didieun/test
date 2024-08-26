@@ -1,0 +1,6 @@
+package login_Quiz;
+
+// setter, getter 만 저장 
+public class LoginDTO {
+
+}

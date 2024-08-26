@@ -1,0 +1,19 @@
+package constructor;
+
+class TestClass02{
+	
+	// 디폴트 생성
+	public TestClass02() {
+		
+	}
+	
+}
+
+public class MainClass02 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,24 @@
+package Quiz;
+//16장.상속.pdf 강의교안의 31쪽 8번문제
+// 항상 부모클래스 생성자를 호출할 때는 첫줄에서 해야 한다.
+
+class A {
+	public A() {
+		super();
+		System.out.println("hello from a");
+	} //A() 기본 생성자
+}
+
+class B extends A{
+	public B() {
+		
+		System.out.println("hell from b");
+//		super(); // 에러남. 부모생성자를 먼저 호출해야됨(첫번째 줄에 호출해야됨)
+		
+	}
+}
+public class Ex16_08 {
+	public static void main(String[] args) {
+		A a = new B();
+	}
+}

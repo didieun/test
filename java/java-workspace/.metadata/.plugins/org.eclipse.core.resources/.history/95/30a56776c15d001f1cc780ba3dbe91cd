@@ -1,0 +1,19 @@
+package constructor;
+
+class TestClass02{
+	
+	public TestClass02(int num) {
+		System.out.println(num + ": 생성자");
+		
+	}
+	
+}
+
+public class MainClass02 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,20 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int num = input.nextInt();
+	
+		int a = num / 4;
+		if (num % 4 == 0) {
+			for(int i = 1; i <= a; i++) {
+				System.out.print("long ");
+			}
+			System.out.print("int");
+		}
+		
+		
+	}
+}

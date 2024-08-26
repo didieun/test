@@ -1,0 +1,11 @@
+package net.daum.model02;
+
+import net.daum.model01.AirCon;
+
+public class AirModel01 extends AirCon {
+
+	@Override
+	public void goods_in() {
+	}
+
+}

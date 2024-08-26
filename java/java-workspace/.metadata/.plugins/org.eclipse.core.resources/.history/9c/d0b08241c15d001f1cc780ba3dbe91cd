@@ -1,0 +1,18 @@
+package constructor;
+
+class TestClass02{
+	
+	public TestClass02() {
+		
+	}
+	
+}
+
+public class MainClass02 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

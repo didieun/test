@@ -1,0 +1,128 @@
+package park;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Photo {
+
+	Scanner input = new Scanner(System.in);
+	PhotoDTO p = new PhotoDTO();
+	
+	int num;
+	
+	public void display() {
+		
+		boolean bool = true;
+		
+		while(bool) {
+			System.out.println("1. 사진 촬영   2. 동영상 촬영   3. 앨범   4. 삭제   5. 나가기 ");
+			System.out.print(">>> ");
+			int number = input.nextInt();
+			input.nextLine();
+			System.out.println();
+			
+			switch(number) {
+				case 1: 
+					filming(number);
+					break;
+				case 2:
+					filming(number);
+					break;
+				case 3:
+					ArrayList<String> name = p.getList();
+					
+					System.out.println("------ 앨범 목록 ------");
+					for(int i = 0; i < p.getList().size(); i++) {
+						System.out.println((i + 1) + ". " + name.get(i));
+					}
+			
+					System.out.println();
+					break;
+					
+				case 4:
+					ArrayList<String> file = p.getList();
+					
+					System.out.println("------ 파일 삭제 ------");
+					System.out.print("삭제할 파일명 입력: ");
+					String inputName = input.nextLine();
+					
+					int re = file.contains(inputName);
+					
+					if(re == -1) {
+						
+					} else {
+						System.out.println("검색된 파일명이 없습니다.");
+					}
+					
+					System.err.println();
+					break;
+				case 5:
+					System.out.println("사진 메뉴 종료!!!");
+					bool = false;
+					System.out.println();
+					break;
+				default:
+					System.out.println("다시 입력해주세요.");
+					System.out.println();
+					break;
+			}
+		}
+	}
+	
+	public void filming(int number) {
+		
+		if(number == 1) {
+			System.out.println("------ 사진 촬영 ------");
+		} else if(number == 2) {
+			System.out.println("------ 동영상 촬영 ------");
+		}
+		
+		System.out.println("1. 촬영 \t 2. 취소");
+		System.out.print(">>> ");
+		num = input.nextInt();
+		System.out.println();
+		
+		switch(num) {
+			case 1: 
+				if(number == 1) {
+					System.out.println("사진 촬영 완료!!!!");
+				} else if(number == 2) {
+					System.out.println("동영상 촬영 완료!!!!");
+				}
+				
+				System.out.println("1. 저장 \t 2. 취소");
+				System.out.print(">>> ");
+				num = input.nextInt();
+				input.nextLine();
+				System.out.println();
+				
+				if(num == 1) {
+					if(number == 1) {
+						System.out.print("사진이름 입력: ");
+						p.setFileName(input.next() + ".jpg");
+					
+						System.out.println("사진이 저장되었습니다. ");
+					} else if(number == 2) {
+						System.out.print("동영상이름 입력: ");
+						p.setFileName(input.next() + ".wmv");
+					
+						System.out.println("동영상이 저장되었습니다. ");
+					}
+					
+				} else {
+					System.out.println("취소 했습니다.");
+				}
+				
+				break;
+			case 2: 
+				System.out.println("취소 했습니다.");
+				break;
+			default:
+				System.out.println("다시 입력해주세요.");
+				System.out.println();
+				break;
+		}
+		
+		System.out.println();
+	}
+}

@@ -1,0 +1,15 @@
+/*	static 키워드로 정의된 정적배열을 클래스 초기화블록 static{}을 사용해서
+ *	배열원소값을 초기화를 하는 예제
+ */
+
+public class BLockTest18 {
+	
+	static int[] arr = new int[10]; // 배열크기가 10인 정적배열 arr생성
+	static {
+		
+	} // 클래스 초기화 블록
+	
+	public static void main(String[] args) {
+
+	}
+}
